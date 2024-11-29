@@ -1,0 +1,6 @@
+# Ignore all files in the binlog and sql directories
+binlog/binlog.*
+sql/*.sql
+
+# etc
+.idea
