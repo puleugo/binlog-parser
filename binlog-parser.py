@@ -15,7 +15,7 @@ def convert_binlog_to_sql(binlog_dir="./binlog", sql_dir="./sql"):
 
             try:
                 # Run mysqlbinlog command to convert the binlog to sql
-                command = f"mysqlbinlog {binlog_path} > {sql_path}"
+                command = f"mysqlbinlog --base64-output=DECODE-ROWS -v {binlog_path} > {sql_path}"
                 subprocess.run(command, shell=True, check=True)
                 print(f"Converted '{binlog_path}' to '{sql_path}'.")
             except subprocess.CalledProcessError as e:
