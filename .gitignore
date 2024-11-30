@@ -4,3 +4,4 @@ sql/*.sql
 
 # etc
 .idea
+.DS_Store
