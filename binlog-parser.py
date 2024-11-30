@@ -1,6 +1,9 @@
 import os
 import subprocess
 
+# https://dev.mysql.com/doc/refman/8.4/en/mysqlbinlog.html
+# This is Row Based Binlog Converter
+# If you want to convert Statement Based Binlog, you can remove --base64-output=DECODE-ROWS
 def convert_binlog_to_sql(binlog_dir="./binlog", sql_dir="./sql"):
     # Ensure the directory exists
     if not os.path.exists(binlog_dir):
